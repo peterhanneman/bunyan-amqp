@@ -1,6 +1,6 @@
 {
   "name": "bunyan-amqp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "AMQP transport stream for Bunyan.",
   "main": "index.js",
   "keywords": [
