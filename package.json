@@ -1,0 +1,33 @@
+{
+  "name": "bunyan-amqp",
+  "version": "0.0.1",
+  "description": "AMQP transport stream for Bunyan.",
+  "main": "index.js",
+  "keywords": [
+    "amqp",
+    "bunyan",
+    "rabbitmq",
+    "stream",
+    "transport"
+  ],
+  "contributors": [{
+    "name": "Peter Hanneman",
+    "email": "peter.a.hanneman@gmail.com",
+    "url": "https://github.com/timelessvirtues"
+  }],
+  "license": "MIT",
+  "dependencies": {
+    "amqplib": "^0.3.2",
+    "bluebird": "^2.9.34",
+    "json-stringify-safe": "^5.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/timelessvirtues/bunyan-amqp"
+  },
+  "bugs": {
+    "url": "https://github.com/timelessvirtues/bunyan-amqp/issues",
+    "email": "peter.a.hanneman@gmail.com"
+  },
+  "readmeFilename": "README.md"
+}
