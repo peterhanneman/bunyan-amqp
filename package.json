@@ -1,6 +1,6 @@
 {
   "name": "bunyan-amqp",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "ES6 AMQP transport stream for Bunyan logging library.",
   "main": "index.js",
   "keywords": [
