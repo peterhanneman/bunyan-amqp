@@ -24,7 +24,7 @@ class BunyanTransport {
       60: 'fatal',
     };
     this._transport = new Promise(function(resolve, reject) {
-      AMQP.connect(`amqp://${_this.username}:${_this.password}@${_this.host}:${_this.port}${_this.vhost}`, function(error, connection) {
+      AMQP.connect(`amqp://${_this._username}:${_this._password}@${_this._host}:${_this._port}${_this._vhost}`, function(error, connection) {
         if (error) reject(error);
         else {
           _this._connection = connection;
@@ -32,7 +32,7 @@ class BunyanTransport {
             if (error) reject(error);
             else {
               channel.assertExchange(_this._exchange, 'topic', { durable: true });
-              channel.assertQueue(self._queue, { durable: true, exclusive: false }, function(error, queue) {
+              channel.assertQueue(_this._queue, { durable: true, exclusive: false }, function(error, queue) {
                 if (error) reject(error);
                 else {
                   _this._channel = channel;
@@ -49,7 +49,7 @@ class BunyanTransport {
   write(message) {
     var _this = this;
     this._transport.then(function(channel) {
-      var topics = [message.hostname.replace('.', ':'), message.name.replace('.', ':'), self.levels[message.level]].join('.');
+      var topics = [message.hostname.replace('.', ':'), message.name.replace('.', ':'), _this.levels[message.level]].join('.');
       channel.publish(_this._exchange, topics, new Buffer(Stringify(message, null, 2)));
     });
   }
